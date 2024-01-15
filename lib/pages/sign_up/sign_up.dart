@@ -5,25 +5,28 @@ import 'package:sheger_learning/commons/widgets/button_widgets.dart';
 import 'package:sheger_learning/commons/widgets/text_widget.dart';
 import 'package:sheger_learning/pages/sign_in/widgets/sign_in_widgets.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
-
-      appBar: buildAppBar(title: "Login"),
+      appBar: buildAppBar(title: "Sign Up"),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //top login buttons
-            thirdPartyLogin(),
+          //  thirdPartyLogin(),
             //more login options message
             const SizedBox(height: 40,),
-            text14Normal(text: "or use your email account to login"),
+            text16Normal(text: "Enter your details below & free Sign Up"),
+            const SizedBox(height: 20,),
+            //User Name
+            appTextField(
+                text: "user Name",
+                iconName:"assets/images/user.png",
+                hintText: "Inter your user name"),
             const SizedBox(height: 20,),
             //eamil Text Box
             appTextField(
@@ -39,18 +42,25 @@ class SignIn extends StatelessWidget {
                 hintText: "Inter Your Password"),
             const SizedBox(height: 20,),
             //Password Text Box confirm
-            textUnderline(text: "Forget Password?"),
+            appTextField(
+                text: "Confirm Password",
+                iconName:"assets/images/pass.png",
+                obscureText: true,
+                hintText: "Confirm your password"),
+            SizedBox(height: 20,),
+            text16Normal(text: "By creating an account you have to agree with our therm & conditions"),
             const SizedBox(height: 50,),
-            //Login Button
-            appButton(context: context,text: "Login",color: AppColors.primaryElement),
             //signup Button
             const SizedBox(height: 50,),
-            appButton(
-                context: context,
-                text: "SignUp",
+            signUpButton(
+              //  context: context,
+                func: (){
+                 Navigator.pushNamed(context, '/singin');
+                  },
+                text: "Create your account",
                 routePage: "SignUp",
-                color: AppColors.primaryBackground,
-                textColor: AppColors.primaryText
+                color: AppColors.primaryElement,
+                textColor: AppColors.primaryElementText
             ),
           ],
 
@@ -58,4 +68,13 @@ class SignIn extends StatelessWidget {
       ),
     );
   }
+  void registration(BuildContext context,String routePage){
+    Navigator.pushNamed(context, '/$routePage');
+    //print('Hello Functions');
+  }
+}
+
+void regst(int xc){
+  print('Registrations of Users');
+
 }

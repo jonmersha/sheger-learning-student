@@ -5,19 +5,7 @@ import 'package:sheger_learning/commons/widgets/app_shadows.dart';
 import 'package:sheger_learning/commons/widgets/image_widget.dart';
 import 'package:sheger_learning/commons/widgets/text_widget.dart';
 
-AppBar buildAppBar(){
-  return AppBar(
-    bottom: PreferredSize(
-      preferredSize: Size.fromHeight(1),
-      child: Container(
-       // color: Colors.red,
-        height: 2,
-      ),
-      
-    ),
-    title: text16Normal(text: 'Login',color:AppColors.primaryText),
-  );
-}
+
 Widget thirdPartyLogin(){
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 80),
